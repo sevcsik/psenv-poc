@@ -1,7 +1,7 @@
 #! /usr/bin/env nix-shell
-#! nix-shell -p powershell -p nodejs -i pwsh
+#! nix-shell -p powershell -i pwsh
 
 Set-Item -Path "Env:TEST_ENV_VAR" -Value "működik!"
 
-node printEnv.js
+nix-shell -p nodejs --run "node printEnv.js"
 
